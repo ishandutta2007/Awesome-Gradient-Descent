@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0d0d2b"/>
+      <stop offset="50%"  stop-color="#1a0533"/>
+      <stop offset="100%" stop-color="#001f4d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#7c3aed"/>
+      <stop offset="50%"  stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="curve" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#06b6d4" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#bg)"/>
+
+  <!-- Subtle grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="0" y1="60"  x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="200"  y1="0" x2="200"  y2="300"/>
+    <line x1="400"  y1="0" x2="400"  y2="300"/>
+    <line x1="600"  y1="0" x2="600"  y2="300"/>
+    <line x1="800"  y1="0" x2="800"  y2="300"/>
+    <line x1="1000" y1="0" x2="1000" y2="300"/>
+  </g>
+
+  <!-- Accent stripe top -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#accent)"/>
+  <!-- Accent stripe bottom -->
+  <rect x="0" y="296" width="1200" height="4" fill="url(#accent)"/>
+
+  <!-- Loss curve (parabola-like) on left -->
+  <path d="M 60,240 Q 130,60 200,240" stroke="url(#curve)" stroke-width="3" fill="none" filter="url(#glow)" opacity="0.85"/>
+  <!-- Descent arrow steps -->
+  <circle cx="80"  cy="218" r="5" fill="#06b6d4" filter="url(#glow)"/>
+  <circle cx="110" cy="155" r="5" fill="#38bdf8" filter="url(#glow)"/>
+  <circle cx="140" cy="108" r="5" fill="#818cf8" filter="url(#glow)"/>
+  <circle cx="165" cy="88"  r="5" fill="#a78bfa" filter="url(#glow)"/>
+  <circle cx="200" cy="90"  r="7" fill="#7c3aed" filter="url(#softglow)"/>
+  <!-- arrows between dots -->
+  <line x1="80"  y1="218" x2="110" y2="155" stroke="#06b6d4" stroke-width="1.5" opacity="0.7"/>
+  <line x1="110" y1="155" x2="140" y2="108" stroke="#38bdf8" stroke-width="1.5" opacity="0.7"/>
+  <line x1="140" y1="108" x2="165" y2="88"  stroke="#818cf8" stroke-width="1.5" opacity="0.7"/>
+  <line x1="165" y1="88"  x2="200" y2="90"  stroke="#a78bfa" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Nabla symbol left glow -->
+  <text x="50" y="270" font-family="serif" font-size="36" fill="#06b6d4" opacity="0.25" filter="url(#softglow)">∇</text>
+
+  <!-- Right side math symbols -->
+  <text x="980"  y="80"  font-family="serif" font-size="28" fill="#7c3aed" opacity="0.35" filter="url(#softglow)">θ</text>
+  <text x="1050" y="130" font-family="serif" font-size="22" fill="#06b6d4" opacity="0.30" filter="url(#softglow)">∇L</text>
+  <text x="1000" y="200" font-family="serif" font-size="20" fill="#818cf8" opacity="0.30" filter="url(#softglow)">α</text>
+  <text x="1100" y="240" font-family="serif" font-size="26" fill="#38bdf8" opacity="0.25" filter="url(#softglow)">∂</text>
+
+  <!-- Glowing orbs background -->
+  <circle cx="950" cy="150" r="80" fill="#7c3aed" opacity="0.07"/>
+  <circle cx="250" cy="150" r="60" fill="#06b6d4" opacity="0.06"/>
+
+  <!-- Main Title -->
+  <text x="600" y="128"
+        font-family="'Segoe UI', Arial, sans-serif"
+        font-size="52"
+        font-weight="700"
+        text-anchor="middle"
+        fill="white"
+        letter-spacing="1">Awesome Gradient Descent</text>
+
+  <!-- Gradient underline under title -->
+  <rect x="280" y="138" width="640" height="3" rx="2" fill="url(#accent)" opacity="0.9"/>
+
+  <!-- Subtitle -->
+  <text x="600" y="178"
+        font-family="'Segoe UI', Arial, sans-serif"
+        font-size="20"
+        text-anchor="middle"
+        fill="#94a3b8"
+        letter-spacing="0.5">A curated guide to gradient descent variants in Artificial Intelligence</text>
+
+  <!-- Tags -->
+  <rect x="360" y="205" width="120" height="28" rx="14" fill="#7c3aed" opacity="0.25"/>
+  <text x="420" y="224" font-family="'Segoe UI', Arial, sans-serif" font-size="13" text-anchor="middle" fill="#c4b5fd">Optimization</text>
+
+  <rect x="498" y="205" width="110" height="28" rx="14" fill="#2563eb" opacity="0.25"/>
+  <text x="553" y="224" font-family="'Segoe UI', Arial, sans-serif" font-size="13" text-anchor="middle" fill="#93c5fd">Deep Learning</text>
+
+  <rect x="626" y="205" width="90" height="28" rx="14" fill="#06b6d4" opacity="0.22"/>
+  <text x="671" y="224" font-family="'Segoe UI', Arial, sans-serif" font-size="13" text-anchor="middle" fill="#67e8f9">Research</text>
+
+  <rect x="734" y="205" width="106" height="28" rx="14" fill="#059669" opacity="0.22"/>
+  <text x="787" y="224" font-family="'Segoe UI', Arial, sans-serif" font-size="13" text-anchor="middle" fill="#6ee7b7">Open Source</text>
+
+  <!-- Bottom tagline -->
+  <text x="600" y="270"
+        font-family="'Segoe UI', Arial, sans-serif"
+        font-size="13"
+        text-anchor="middle"
+        fill="#475569"
+        letter-spacing="2">11 VARIANTS  ·  HISTORY  ·  DIAGRAMS  ·  PAPERS</text>
+</svg>
